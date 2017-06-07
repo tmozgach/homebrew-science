@@ -20,6 +20,7 @@ class Meme < Formula
   EOF
 
   depends_on :mpi => [:recommended]
+  depends_on "imagemagick"
 
   def install
     ENV.deparallelize
