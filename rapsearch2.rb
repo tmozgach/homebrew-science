@@ -6,6 +6,7 @@ class Rapsearch2 < Formula
   sha256 "85db4573f4c768b6c3c73bb44ff2611ba48dc6c8d188feb40f44bf7c55de36ce"
   # tag "bioinformatics"
   # doi "10.1093/bioinformatics/btr595:"
+  revision 1
 
   bottle do
     sha256 "28f6de891fc6aff968933ca60b388388f21784c2b2d02a65e922a10043fa1ed4" => :sierra
