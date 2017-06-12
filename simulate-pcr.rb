@@ -7,6 +7,7 @@ class SimulatePcr < Formula
 
   url "https://downloads.sourceforge.net/project/simulatepcr/simulate_PCR-v1.2.tar.gz"
   sha256 "022d1cc595d78a03b6a8a982865650f99d9fa067997bfea574c2416cc462e982"
+  revision 1
 
   depends_on "blast"
   depends_on "Bio::Perl" => :perl
@@ -14,6 +15,7 @@ class SimulatePcr < Formula
 
   def install
     bin.install "simulate_PCR"
+    inreplace bin/"simulate_PCR", "#!/usr/bin/perl", "#!/usr/bin/env perl"
   end
 
   test do
