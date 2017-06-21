@@ -3,6 +3,7 @@ class Fwdpp < Formula
   homepage "https://molpopgen.github.io/fwdpp/"
   url "https://github.com/molpopgen/fwdpp/archive/0.5.5.tar.gz"
   sha256 "31d8bace6350d3c58dde460533b1a674c8792baace8741afd0a2efcf936295ba"
+  revision 1
   head "https://github.com/molpopgen/fwdpp.git"
   # doi "10.1534/genetics.114.165019"
   # tag "bioinformatics"
@@ -23,13 +24,14 @@ class Fwdpp < Formula
   # so restrict to mavericks and newer
   depends_on :macos => :mavericks
 
-  depends_on "gsl"
+  #depends_on "gsl"
   depends_on "libsequence"
   depends_on "boost" => :recommended
 
   def install
     system "./configure", "--prefix=#{prefix}"
     system "make"
+   
     system "make", "check" if build.with? "test"
     system "make", "install"
     pkgshare.install "examples", "testsuite/unit"
