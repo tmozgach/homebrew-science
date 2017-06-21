@@ -3,7 +3,7 @@ class Lobstr < Formula
   homepage "http://lobstr.teamerlich.org"
   url "https://github.com/mgymrek/lobstr-code/releases/download/v4.0.6/lobSTR-4.0.6.tar.gz"
   sha256 "f13bfc17eebd4aadd58fd798941318d8278a2da2e64e596027ebc26e004ce31c"
-  revision 2
+  revision 3
   # doi "10.1101/gr.135780.111"
   # tag "bioinformatics"
 
@@ -31,7 +31,15 @@ class Lobstr < Formula
   depends_on "gsl"
   depends_on "boost"
 
+  needs :cxx11
+
+  patch do
+    url "https://github.com/mgymrek/lobstr-code/pull/89.patch?full_index=1"
+    sha256 "3c268ca640e02cf87cdd6eec8d81cb9b1fe58cc130f894109ae0a168b3095b34"
+  end
+
   def install
+    ENV.cxx11
     system "sh", "./reconf" if build.head?
     system "./configure", "--prefix=#{prefix}",
                           "--disable-dependency-tracking"
