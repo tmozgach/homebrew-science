@@ -14,7 +14,11 @@ class Igraph < Formula
   end
 
   option :universal
-
+  
+  depends_on "libxml2" unless OS.mac?
+  
+  depends_on "openblas" unless OS.mac?
+  
   # Use Homebrew Arpack, but disable thread-local storage.
   # If not selected, iGraph uses a built-in Arpack.
   depends_on "arpack" => :optional
