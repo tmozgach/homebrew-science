@@ -3,6 +3,7 @@ class Parsnp < Formula
   homepage "https://github.com/marbl/parsnp"
   # tag "bioinformatics"
   # doi "10.1186/s13059-014-0524-x"
+  revision 1
   head "https://github.com/marbl/parsnp.git"
 
   if OS.mac?
@@ -15,9 +16,21 @@ class Parsnp < Formula
 
   bottle :unneeded
 
+  unless OS.mac?
+    depends_on "patchelf" => :build
+    depends_on "zlib"
+  end
+
   def install
     bin.install "parsnp"
     doc.install "README"
+    if OS.linux?
+      # Use the brewed zlib rather than the host's.
+      system "patchelf",
+        "--set-rpath", [HOMEBREW_PREFIX, Formula["zlib"].lib].join(":"),
+        "--set-interpreter", HOMEBREW_PREFIX/"lib/ld.so",
+        bin/"parsnp"
+    end
   end
 
   test do
