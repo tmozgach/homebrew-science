@@ -32,6 +32,9 @@ class Masurca < Formula
   end
 
   depends_on "parallel"
+  depends_on "jellyfish"
+  depends_on "zlib"
+  depends_on "bzip2"
 
   def install
     if OS.mac?
