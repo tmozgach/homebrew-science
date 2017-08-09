@@ -1,3 +1,4 @@
+# kraken: Build a bottle for Linuxbrew
 class Kraken < Formula
   desc "Assign taxonomic labels to short DNA sequences"
   homepage "https://ccb.jhu.edu/software/kraken/"
