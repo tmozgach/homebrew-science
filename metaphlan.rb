@@ -1,3 +1,4 @@
+# metaphlan: Build a bottle for Linuxbrew
 class Metaphlan < Formula
   desc "MetaPhlAn: Metagenomic Phylogenetic Analysis"
   homepage "http://huttenhower.sph.harvard.edu/metaphlan"
@@ -19,11 +20,17 @@ class Metaphlan < Formula
   depends_on :python if MacOS.version <= :snow_leopard
   depends_on "blast" => :optional
   depends_on "bowtie2" => :recommended
+  depends_on "numpy"
 
   def install
     prefix.install Dir["*"]
     bin.install_symlink "../metaphlan.py"
     bin.install_symlink "../metaphlan.py" => "metaphlan"
+
+    if OS.linux?
+      # Strip the binaries to reduce their size.
+      system "strip", *Dir[bin/"*"].select { |f| Pathname.new(f).elf? }
+    end
   end
 
   test do
