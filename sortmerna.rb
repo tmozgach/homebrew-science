@@ -1,3 +1,4 @@
+# sortmerna: Build a bottle for Linuxbrew
 class Sortmerna < Formula
   desc "SortMeRNA: filter metatranscriptomic ribosomal RNA"
   homepage "http://bioinfo.lifl.fr/RNA/sortmerna/"
@@ -15,6 +16,8 @@ class Sortmerna < Formula
     sha256 "7a17df037fc24ef5c733e397f22c07f7fe0b2ed9186c072904e4c0414261aa91" => :el_capitan
     sha256 "a631cb5846ab986237852a6df657a08eb3d27a9ad4a84c841f4ab9a150812af4" => :yosemite
   end
+
+  depends_on "zlib"
 
   def install
     system "./configure",
