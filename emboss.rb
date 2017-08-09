@@ -1,3 +1,4 @@
+# emboss: Build a bottle for Linuxbrew
 class Emboss < Formula
   homepage "https://emboss.sourceforge.io/"
   url "ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-6.6.0.tar.gz"
