@@ -81,7 +81,7 @@ class Nlopt < Formula
   end
 
   test do
-    # Based on http://ab-initio.mit.edu/wiki/index.php/NLopt_Tutorial#Example_in_C.2FC.2B.2B
+    # Based on  http://ab-initio.mit.edu/wiki/index.php/NLopt_Tutorial#Example_in_C.2FC.2B.2B
     (testpath/"test.c").write <<-EOS.undent
     #include <math.h>
     #include <nlopt.h>
@@ -131,7 +131,7 @@ class Nlopt < Formula
       nlopt_destroy(opt);
     }
     EOS
-    system ENV.cc, "test.c", "-o", "test", "-lnlopt", "-lm"
+    system ENV.cxx, "test.c", "-o", "test", "-lnlopt", "-lm"
     system "./test"
   end
 end
