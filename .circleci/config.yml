@@ -30,11 +30,11 @@ jobs:
           PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH";
           brew install patchelf
           && brew tap linuxbrew/xorg
-          && brew test-bot
+          && brew test-bot --keep-old
       - store_artifacts:
           path: /home/linuxbrew/bottles
       - store_test_results:
           path: /home/linuxbrew/bottles
 notify:
   webhooks:
-    - url: https://p4142ivuwk.execute-api.us-west-2.amazonaws.com/prod/ci-upload
+    - url: https://p4142ivuwk.execute-api.us-west-2.amazonaws.com/prod/ci-upload?keep-old=1
