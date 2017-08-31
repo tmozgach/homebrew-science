@@ -1,3 +1,5 @@
+# sga: Build a bottle for Linuxbrew
+# sga: Build a bottle for Linuxbrew
 class Sga < Formula
   desc "De novo genome assembler based on the concept of string graphs"
   homepage "https://github.com/jts/sga"
