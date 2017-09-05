@@ -5,6 +5,7 @@ class Discovar < Formula
   sha256 "c46e8f5727b3c8116d715c02e20a83e6261c762e8964d00709abfb322a501d4e"
   # doi "10.1038/ng.3121"
   # tag "bioinformatics"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
@@ -35,6 +36,6 @@ class Discovar < Formula
   end
 
   test do
-    system "Discovar", "--version"
+    system "#{bin}/Discovar", "--version"
   end
 end
