@@ -2,7 +2,7 @@ class Abacas < Formula
   desc "Automatic contiguation of assembled sequences"
   homepage "https://abacas.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/abacas/abacas.1.3.1.pl"
-  sha256 "0afee209a4f879987b320e2f882bc0eab540a7a712a81a5f01b9795d2749310d"
+  sha256 "7a07d3f7cca5c0b38ca811984ef8da536da32932d68c1a6cce33ec2462b930bf"
   # doi "10.1093/bioinformatics/btp347"
   # tag "bioinformatics"
 
