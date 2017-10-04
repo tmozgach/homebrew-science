@@ -4,6 +4,7 @@ class Lrsim < Formula
   url "https://github.com/aquaskyline/LRSIM/archive/1.0.tar.gz"
   sha256 "89623fba2ce624da4e2c8ce8a99b1a46eb3bc03a8c38044c64f4b8a0d0d9721e"
   # tag "bioinformatics"
+  revision 1
 
   bottle do
     cellar :any
