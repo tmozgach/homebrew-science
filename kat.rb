@@ -4,6 +4,7 @@ class Kat < Formula
   url "https://github.com/TGAC/KAT/releases/download/Release-2.3.4/kat-2.3.4.tar.gz"
   sha256 "40ac5e1ea310b4dac35620f74e489a749c355b41d850d297a06c3822f58295e1"
   # tag "bioinformatics"
+  revision 1
 
   bottle do
     rebuild 1
@@ -23,12 +24,6 @@ class Kat < Formula
   option "with-docs", "Build documentation"
 
   needs :cxx11
-
-  unless OS.mac?
-    fails_with :gcc => "5" do
-      cause "Dependency boost is compiled with the GCC 4.8 ABI."
-    end
-  end
 
   depends_on "pkg-config" => :build
   depends_on "sphinx-doc" => :build if build.with? "docs"
